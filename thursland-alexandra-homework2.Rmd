@@ -1,0 +1,99 @@
+---
+title: "Homework 2"
+author: "Alexandra Thursland"
+date: "8/30/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1
+
+### Task 3
+
+Write a function that takes as its inputs that data you simulated (or any data of the same type) and a sequence of θ values of length 1000 and produces Likelihood values based on the Binomial Likelihood. Plot your sequence and its corresponding Likelihood function.
+The likelihood function is given below. Since this is a probability and is only valid over the interval from [0, 1] we generate a sequence over that interval of length 1000.
+You have a rough sketch of what you should do for this part of the assignment. Try this out in lab on your own.
+
+```{r}
+### Bernoulli LH Function ### # Input: obs.data, theta
+# Output: bernoulli likelihood
+### Plot LH for a grid of theta values ### # Create the grid #
+# Store the LH values
+# Create the Plot
+```
+
+### Task 4
+
+Write a function that takes as its inputs prior parameters a and b for the Beta-Bernoulli model and the observed data, and produces the posterior parameters you need for the model. *Generate and print* the posterior parameters for a non-informative prior i.e. (a,b) = (1,1) and for an informative case (a,b) = (3,1)}.
+
+### Task 5
+
+Create two plots, one for the informative and one for the non-informative case to show the posterior distribution and superimpose the prior distributions on each along with the likelihood. What do you see? Remember to turn the y-axis ticks off since superimposing may make the scale non-sense.
+
+## Question 2
+
+(20 points total) The Exponential-Gamma Model We write X ∼ Exp(θ) to indicate that X has the Exponential distribution, that is, its p.d.f. is
+p(x|θ) = Exp(x|θ) = θ exp(−θx)1(x > 0).
+The Exponential distribution has some special properties that make it a good model for certain applications. It has been used to model the time between events (such as neuron spikes, website hits, neutrinos captured in a detector), extreme values such as maximum daily rainfall over a period of one year, or the amount of time until a product fails (lightbulbs are a standard example).
+Suppose you have data x1, . . . , xn which you are modeling as i.i.d. obser- vations from an Exponential distribution, and suppose that your prior is θ ∼ Gamma(a, b), that is,
+ba
+p(θ) = Gamma(θ|a, b) = Γ(a) θa−1 exp(−bθ)1(θ > 0).
+
+### a
+
+(5) Derive the formula for the posterior density, p(θ|x1:n). Give the form of the posterior in terms of one of the most common distribu- tions (Bernoulli, Beta, Exponential, or Gamma).
+
+### b
+
+(5) Why is the posterior distribution a proper density or probability distribution function?
+
+### c
+
+(5) Now, suppose you are measuring the number of seconds between lightning strikes during a storm, your prior is Gamma(0.1, 1.0), and your data is
+(x1 , . . . , x8 ) = (20.9, 69.7, 3.6, 21.8, 21.4, 0.4, 6.7, 10.0).
+Plot the prior and posterior p.d.f.s. (Be sure to make your plots on
+a scale that allows you to clearly see the important features.)
+
+### d 
+
+(5) Give a specific example of an application where an Exponential model would be reasonable. Give an example where an Exponential model would NOT be appropriate, and explain why.
+
+## Question 3
+
+(40 points total) Priors, Posteriors, Predictive Distributions (Hoff, 3.9) An unknown quantity Y has a Galenshore(a, θ) distribution if its density is given by
+p(y) = 2 θ2ay2a−1e−θ2y2 Γ(a)
+for y > 0,θ > 0,a > 0. Assume for now that a is known. For this density, E[Y]= Γ(a+1/2)
+   and
+θΓ(a) E[Y2]= a.
+θ2
+
+### a
+
+(10) Identify a class of conjugate prior densities for θ. Plot a few members of this class of densities.
+
+### b
+
+(5) Let Y1, . . . , Yn ∼ Galenshore(a, θ). Find the posterior distribu-
+tion of θ | y1:n using a prior from your conjugate class.
+
+### c
+
+(10) Write down
+p(θa | y1:n)
+p(θb | y1:n) and simplify. Identify a sufficient statistic.
+
+### d
+
+(5) Determine E[θ | y1:n].
+
+### e
+
+(10) Show that the form of the posterior predictive density
+2y2a−1Γ(an + a + c) n+1
+(d2 + 􏰀 y2)an+c i
+p(yn+1 | y1:n) = Γ(a)Γ(an + c)
+(d2 + 􏰀 yi2 + yn2+1)(an+a+c) .
+
